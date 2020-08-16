@@ -13,12 +13,6 @@ RUN apt-get update \
  && apt-get install -y zip unzip git python3 python3-pip krb5-multidev
 RUN pip3 install -U botocore awscli pylint autopep8 jupyter notebook sparkmagic
 
-
-# setup python3 and pip3 to be default and add display profile info to cmd prompt.
-RUN echo 'alias python="/usr/bin/python3"' >> /root/.bashrc \
- && echo 'alias pip="/usr/bin/pip3"' >> /root/.bashrc \
- && echo 'export PS1="(\$AWS_PROFILE) $PS1"' >> /root/.bashrc
-
 RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix
 
 RUN cd /usr/local/lib/python3.6/dist-packages/ \
