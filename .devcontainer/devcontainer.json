@@ -1,0 +1,22 @@
+{
+  "name": "AWS Glue Job + Jupyter Starter Pack",
+  "dockerfile": "Dockerfile",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "mounts": [
+    "type=bind,\"source=${localEnv:HOME}${localEnv:USERPROFILE}\\.aws\",\"target=/root/.aws\",consistency=cached"
+  ],
+  "extensions": [
+    "ms-python.python",
+    "streetsidesoftware.code-spell-checker"
+  ],
+  "runArgs": [
+    "--memory=4g"
+  ],
+  "dockerFile": "Dockerfile",
+  "context": "..",
+  "forwardPorts": [
+    8998
+  ]
+}
